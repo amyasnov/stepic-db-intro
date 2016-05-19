@@ -168,10 +168,6 @@ CREATE TABLE IF NOT EXISTS `sale_history` (
 ENGINE = InnoDB;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 -- -----------------------------------------------------
 -- Data for table `good`
 -- -----------------------------------------------------
@@ -303,14 +299,9 @@ INSERT INTO `good` (`id`, `name`, `price`) VALUES (125, 'Dam Jaystock', 386.00);
 INSERT INTO `good` (`id`, `name`, `price`) VALUES (126, 'Tripple-Dox', 758.00);
 INSERT INTO `good` (`id`, `name`, `price`) VALUES (127, 'Sanlex', 704.00);
 
-COMMIT;
-
-
 -- -----------------------------------------------------
 -- Data for table `category`
 -- -----------------------------------------------------
-START TRANSACTION;
-USE `store`;
 INSERT INTO `category` (`id`, `name`) VALUES (1, 'Air Fresheners');
 INSERT INTO `category` (`id`, `name`) VALUES (2, 'Bath Products');
 INSERT INTO `category` (`id`, `name`) VALUES (3, 'Cakes');
