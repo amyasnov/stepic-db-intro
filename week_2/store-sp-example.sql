@@ -11,7 +11,7 @@ BEGIN
 	
 	UPDATE order_history 
 		SET active_to = now 
-	WHERE order_id = order_id AND
+	WHERE order_history.order_id = order_id AND
 		  active_to IS NULL	
 	LIMIT 1;
 
