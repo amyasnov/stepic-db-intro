@@ -1,8 +1,17 @@
+-- MySQL Workbench Forward Engineering
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+-- -----------------------------------------------------
+-- Schema store
+-- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `store` ;
+
+-- -----------------------------------------------------
+-- Schema store
+-- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `store` DEFAULT CHARACTER SET utf8 ;
 USE `store` ;
 
@@ -17,8 +26,7 @@ CREATE TABLE IF NOT EXISTS `store`.`good` (
   `price` DECIMAL(16,2) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -31,8 +39,7 @@ CREATE TABLE IF NOT EXISTS `store`.`category` (
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -57,8 +64,7 @@ CREATE TABLE IF NOT EXISTS `store`.`category_has_good` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -71,8 +77,7 @@ CREATE TABLE IF NOT EXISTS `store`.`status` (
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -97,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `store`.`client` (
   `code` VARCHAR(45) NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NULL,
-  `source_id` INT NOT NULL,
+  `source_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_client_source1_idx` (`source_id` ASC),
   CONSTRAINT `fk_client_source1`
@@ -136,8 +141,7 @@ CREATE TABLE IF NOT EXISTS `store`.`sale` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -162,8 +166,7 @@ CREATE TABLE IF NOT EXISTS `store`.`sale_has_good` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
