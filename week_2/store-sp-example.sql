@@ -16,7 +16,7 @@ BEGIN
 	LIMIT 1;
 
 	INSERT INTO sale_history 
-			   (sale_id, status_id, sum, active_from, active_to)	
-		VALUES (sale_id, status_id, sum, now, NULL);
+			   (sale_id, status_id, sale_sum, active_from, active_to)	
+		VALUES (sale_id, status_id, sale_sum, now, NULL);
 END
 //
