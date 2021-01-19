@@ -3,7 +3,7 @@ DELIMITER //
 CREATE PROCEDURE update_sale_history (
 	sale_id INTEGER,
 	status_id INTEGER,
-	sum DECIMAL(18,2)
+	sale_sum DECIMAL(18,2)
 )
 BEGIN
 	DECLARE now DATETIME;
